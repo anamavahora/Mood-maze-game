@@ -1,0 +1,44 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+
+#gameInfo {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(10, 40px);
+  gap: 2px;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.player {
+  background-color: black !important;
+}
+
+.path-blue { background-color: #a0c4ff; }
+.path-yellow { background-color: #fdffb6; }
+.path-red { background-color: #ffadad; }
+.path-purple { background-color: #d0bfff; }
+
+.hidden { background-color: #ccc !important; }
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+}
