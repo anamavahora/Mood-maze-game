@@ -1,30 +1,43 @@
+/* Base styling */
 body {
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
-  background-color: #f0f0f0;
+  background-color: #f8f8f8;
   margin: 0;
   padding: 20px;
+  color: #333;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: 2em;
+  color: #444;
 }
 
 #gameInfo {
-  font-size: 1.2em;
-  margin-bottom: 15px;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 #gameBoard {
   display: grid;
-  grid-template-columns: repeat(10, 40px);
-  grid-template-rows: repeat(10, 40px);
-  gap: 2px;
+  gap: 3px;
   justify-content: center;
   margin: 0 auto 20px auto;
+  width: 100%;
+  max-width: 420px;
 }
 
 .cell {
-  width: 40px;
-  height: 40px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
   background-color: #ccc;
   border-radius: 4px;
+  transition: background-color 0.2s;
 }
 
 .player {
@@ -36,9 +49,43 @@ body {
 .path-red { background-color: #ffadad; }
 .path-purple { background-color: #d0bfff; }
 
-.hidden { background-color: #ccc !important; }
+.hidden {
+  background-color: #ccc !important;
+  opacity: 0.3;
+}
 
 button {
   padding: 10px 20px;
   font-size: 1em;
+  border: none;
+  border-radius: 6px;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #666;
+}
+
+/* Responsive grid size */
+@media (min-width: 320px) {
+  #gameBoard {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  #gameBoard {
+    max-width: 500px;
+    gap: 4px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #gameBoard {
+    max-width: 600px;
+    gap: 5px;
+  }
 }
